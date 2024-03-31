@@ -1,0 +1,33 @@
+void rotateArr(int arr[], int d, int n){
+
+//To convert the negative rotation to positive rotation
+
+    d %= n;
+
+    if(d < 0){
+
+        d += n;
+
+    }
+
+    vector<int>temp(n);
+
+//To rotate the array  in clockwise direction use "(n-d+i) % n" and copy it in that position in the temp vector.
+
+    for(int i = 0; i < n; i++){
+
+       temp[(n-d+i) % n] = arr[i];
+
+    }
+
+ 
+
+//Simply copy all the elements in temp vector to the original array
+
+    for(int i = 0; i < n; i++){
+
+        arr[i] = temp[i];
+
+    }
+
+}
